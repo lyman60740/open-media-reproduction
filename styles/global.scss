@@ -1,0 +1,67 @@
+@import 'fonts';
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  /* Styles de base pour les titres h1 à h6 */
+  h1, h2, h3, h4, h5, h6 {
+
+    font-weight: normal; /* ou votre poids préféré */
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles de base pour les boutons */
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    display: inline-block;
+    margin: 0;
+    padding: 0; /* ajustez le padding selon vos besoins */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0; /* couleur de fond du bouton */
+    color: #000; /* couleur du texte du bouton */
+    line-height: normal;
+    transition: background-color 0.3s ease; /* transition pour l'effet de survol */
+    font-family: 'Degular', sans-serif;  
+}
+  li {
+    list-style: none; /* pour supprimer les puces des listes */
+  }
+
+  /* Styles de base pour les liens */
+  a {
+    color: white; /* couleur du texte des liens */
+    text-decoration: none; /* ou "underline" si vous souhaitez souligner les liens */
+  }
+  
+  a:hover {
+    color: white; /* couleur du texte des liens au survol */
+  }
+
+body {
+    font-family: 'Degular', sans-serif;
+    background: #181818 ;
+    color: white;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+    box-sizing: border-box;
+    height: 200vh;
+}
+.buttonOpen {
+  background-color: #181818 !important;
+  color: #fff !important; 
+}

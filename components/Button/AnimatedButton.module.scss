@@ -1,0 +1,23 @@
+
+.button {
+    background: rgb(235, 252, 217);
+    color: #181818 ;
+    border-radius: 200px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    & span:nth-child(2) {
+        position: absolute;
+        transform: translateY(200%);
+        font-weight: 500;
+    }
+}
+.buttonOpen {
+    background-color: #000; 
+    color: #fff; 
+  }

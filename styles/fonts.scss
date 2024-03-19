@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Degular', sans-serif;
+    src: url('/fonts/degular-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Degular', sans-serif;
+    src: url('/fonts/degular-black.otf') format('opentype');
+    font-weight: 900; /* Utilisez une valeur de font-weight correspondant à 'black' */
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Degular', sans-serif;
+    src: url('/fonts/degular-bold.otf') format('opentype');
+    font-weight: bold; /* Utilisez une valeur de font-weight correspondant à 'black' */
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Degular', sans-serif;
+    src: url('/fonts/degular-semibold.otf') format('opentype');
+    font-weight: 500; /* Utilisez une valeur de font-weight correspondant à 'black' */
+    font-style: normal;
+  }
+  

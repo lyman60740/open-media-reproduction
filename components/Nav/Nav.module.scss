@@ -1,0 +1,48 @@
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 34px 5%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    & img {
+        z-index: 1;
+    }
+}
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 34px;
+    cursor: pointer;
+    z-index: 3;
+    & div {
+        width: 100%;
+        background: white;
+    }
+    &:hover div {
+        transform: scale(1);
+    }
+}
+.line2, .line3 {
+    height: 1px;
+}
+.line1, .line4 {
+    height: 1px;
+    transform: scaleX(0.5);
+    transition: transform 0.3s ease;
+}
+
+.boxMenu {
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
