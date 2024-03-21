@@ -1,0 +1,11 @@
+.scene {
+    z-index: -1;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    height: 100vh !important;
+}
+.sceneBox {
+    height: 100%;
+    width: 100%;
+}

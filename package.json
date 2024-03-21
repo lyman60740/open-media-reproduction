@@ -10,6 +10,7 @@
     "@react-three/drei": "^9.102.6",
     "@react-three/fiber": "^8.15.19",
     "gsap": "npm:@gsap/shockingly@^3.12.5",
+    "leva": "^0.9.35",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
