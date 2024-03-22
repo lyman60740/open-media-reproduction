@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    width: max-content;
     & span:nth-child(2) {
         position: absolute;
         transform: translateY(200%);

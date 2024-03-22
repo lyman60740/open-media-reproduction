@@ -34,6 +34,7 @@ camera.position.z = 20;
       start: "top top",
       end: "+=3000",
       pin: true,
+      pinSpacing: false,
       onUpdate: (self) => {
         // Mettre à jour l'état de rotation
         const progress = self.progress;
@@ -49,6 +50,7 @@ camera.position.z = 20;
         setPositionYTxt(progress*10); 
       },
     });
+    
   
     // Cleanup
     return () => trigger.kill();
@@ -59,8 +61,7 @@ camera.position.z = 20;
     if (sphereR.current) {
       sphereR.current.rotation.z = THREE.MathUtils.degToRad(rotation);
       sphereR.current.rotation.y = THREE.MathUtils.degToRad(rotationY);
-      sphereR.current.rotation.x = THREE.MathUtils.degToRad(rotationX);
-      
+      sphereR.current.rotation.x = THREE.MathUtils.degToRad(rotationX);      
       
       sphereR.current.position.y = positionY;
       sphereR.current.position.x = positionX;

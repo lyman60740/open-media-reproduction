@@ -1,0 +1,62 @@
+.carousel {
+    background: white;
+    height: 100svh;
+    color: #181818;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+.carouselBox {
+    position: absolute;
+    display: flex;
+    width: max-content;
+    padding: 0 80px;
+    box-sizing: border-box;
+    height: 70%;
+}
+.carouselItem {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    position: relative;
+    height: 100%;
+    background: rgb(235 252 217);
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    &:not(:last-child) {
+        margin-right: 48px;
+    }
+}
+.title {
+    font-size: 112px;
+    font-weight: bold;
+}
+.image {
+width: 50%;
+height: 100%;
+background-size: cover;
+background-position: center;
+}
+
+.leftPart {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.paragraph {
+    font-size: 32px;
+
+    font-weight: bold;
+}
+.description {
+    font-size: 16px;
+
+}
+.blackButton {
+    background: #181818;
+    color: white;
+}

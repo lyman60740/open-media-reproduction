@@ -57,9 +57,23 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
-    height: 500vh;
+    
 }
 .buttonOpen {
   background-color: #181818 !important;
   color: #fff !important; 
+}
+.image3d {
+  position: absolute;
+  height: 300px;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.scene {
+  z-index: -1;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  height: 100vh !important;
 }
