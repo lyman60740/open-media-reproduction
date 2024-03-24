@@ -1,0 +1,39 @@
+.bandeau {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: #e5e7eb;
+    & h2 {
+        position: absolute;
+        font-size: 5vw;
+        font-weight: 600;
+        color:#181818 ;
+        top: -3vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.bandeauBox {
+    display: flex;
+    padding: 50px 0;
+    box-sizing: border-box;
+    width: max-content;
+    
+}
+.stack {
+    display: flex;
+    justify-content: space-around;
+    width: max-content;
+    & img {
+        width: 15vw;
+        filter: grayscale(100%);
+        &:hover {
+            filter: grayscale(0%);
+        }
+        transition: filter 0.3s ease;     
+        margin-right: 10vw;
+        
+        
+    }
+}

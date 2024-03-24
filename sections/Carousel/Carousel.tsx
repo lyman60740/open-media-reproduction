@@ -23,6 +23,7 @@ interface CarouselItem {
 const Carousel: React.FC = () => {
     const carouselRef = useRef<HTMLDivElement>(null);
     const boxRef = useRef<HTMLDivElement>(null);
+    const boxIncrement = useRef<HTMLDivElement>(null);
     const itemList: CarouselItem[] = [
         {
             title: "People",
@@ -50,17 +51,49 @@ const Carousel: React.FC = () => {
         },        
     ]
     useEffect(() => {
+        let animationTriggered = false;
             gsap.to(boxRef.current, {
                 xPercent: -100,
                 ease: "none",
                 scrollTrigger: {
                     trigger: carouselRef.current,
                     start: "top top",
-                    end: () => `+=${boxRef.current.scrollWidth - carouselRef.current.offsetWidth}`,
+                    end: () => `+=${(boxRef.current.scrollWidth - carouselRef.current.offsetWidth)}`,
                     scrub: 1,
                     pin: true,
                     anticipatePin: 1,
+                    onUpdate: (self) => {
+                        const progress = self.progress;
+                        if (progress > 0.8 && !animationTriggered) {
+
+                            document.querySelectorAll('[data-testid="incrementValue"]').forEach((element) => {
+                                let obj = { val: 0 };
+                                // Lire la valeur cible à partir de l'attribut data-target-value
+                                let endValue = parseInt(element.getAttribute('data-target-value'), 10);
+            
+                                gsap.to(obj, {
+                                    val: endValue,
+                                    duration: 1.5,
+                                    delay: 1.7,
+                                    ease: "linear",
+                                    onUpdate: () => {
+                                        element.textContent = Math.floor(obj.val).toString();
+                                    }
+                                });
+                            });
+
+                            gsap.to(boxIncrement.current, {
+                                y: 0,
+                                ease: "power4.Out",
+                                duration: 2,
+                            });
+                            animationTriggered = true; // Mettre à jour la variable pour éviter les déclenchements répétés
+                        }
+                        
+                       
+                    }
                 },
+               
             })
 
             gsap.to('.image3d', {
@@ -96,7 +129,25 @@ const Carousel: React.FC = () => {
                     </div>
                 ))}
                 
-                
+                <div className={styles.incrementStats}>
+                        <div className={styles.box} ref={boxIncrement} data-testid="incrementStats">
+                            <div className={styles.statBox}>
+                                <h3 data-testid="incrementValue" data-target-value="4">0</h3>
+                                <div></div>
+                                <p>Networks</p>
+                            </div>
+                            <div className={styles.statBox}>
+                                <h3 data-testid="incrementValue" data-target-value="37">0</h3>
+                                <div></div>
+                                <p>Premium Locations</p>
+                            </div>
+                            <div className={styles.statBox}>
+                                <h3 data-testid="incrementValue" data-target-value="11">0</h3>
+                                <div></div>
+                                <p>Major Cities</p>
+                            </div>
+                        </div>
+                </div>
                     </div>
                     <Canvas style={{background: 'white'}} className='scene' id="sceneBox">
             <directionalLight position={[-30, -3, 3]} intensity={3} />
@@ -104,6 +155,7 @@ const Carousel: React.FC = () => {
             <Environment files="/medias/envGlass.hdr" />
             <Model2 />
             </Canvas>
+            
             </div>
         );
         

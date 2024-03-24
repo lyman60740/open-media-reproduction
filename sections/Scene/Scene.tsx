@@ -12,19 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Scene(){
 
     const sceneRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-            // gsap.to(sceneRef.current, {
-            //     scrollTrigger: {
-            //         trigger: sceneRef.current,
-            //         start: "top top",
-            //         end: "+=2000",
-            //         scrub: 1,
-            //         pin: true,
-            //         markers: true
-            //     }
-            // })
-            
-          });
     return (
         <div ref={sceneRef} className={styles.sceneBox}>
        

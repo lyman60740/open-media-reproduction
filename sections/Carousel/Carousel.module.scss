@@ -60,3 +60,50 @@ background-position: center;
     background: #181818;
     color: white;
 }
+.test {
+    color: black;
+    font-size: 48px;
+}
+
+// Increment stats section
+
+.incrementStats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    right: -100vw;
+    top: 0;
+    & .box {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        transform: translateY(100vh);
+        & .statBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & h3 {
+                font-size: 320px;
+                font-weight: bold;
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+            & p {
+                font-size: 32px;
+                font-weight: 500;
+            }
+            & div {
+                height: 10px;
+                background: #181818;
+                width: 100%;
+                margin-top: -50px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

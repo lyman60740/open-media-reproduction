@@ -19,7 +19,7 @@ export default function Model2() {
   const startPos = { x: 10, y: -1, z: 5 };
   const endPos = { x: -1, y: .3, z: -.5 };
 
-  const startRot = { x: -10, y: -22, z: -65 };
+  const startRot = { x: -20, y: -22, z: -65 };
   const endRot = { x: 0, y: -22, z: -65 };
 
   useEffect(() => {
@@ -34,7 +34,6 @@ export default function Model2() {
       start: `top top` ,
       end: () => `+=${boxScroll - carouselWidth}`,
       scrub: true,
-      markers: true,
       onUpdate: (self) => {
         const progress = self.progress;
         gsap.to(sphereR2.current.position, {
@@ -77,7 +76,7 @@ export default function Model2() {
     thickness: { value: 0.25, min: 0, max: 3, step: 0.05 },
     roughness: { value: 0, min: 0, max: 1, step: 0.1 },
     transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-    ior: { value: 1.1, min: 1, max: 3, step: 0.1 },
+    ior: { value: 2.8, min: 1, max: 3, step: 0.1 },
     chromaticAberration: { value: 0.27, min: 0, max: 1 },
     backside: { value: true },
     distortionScale: { value: 0.5, min: 0, max: 1, step: 0.1 },
