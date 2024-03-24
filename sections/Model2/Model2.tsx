@@ -24,7 +24,6 @@ export default function Model2() {
 
   useEffect(() => {
     if (!sphereR2.current) return;
-    const screenHeight = window.innerHeight;
     const boxScroll = document.getElementById('boxCarousel').scrollWidth ;
     const carouselWidth = document.getElementById('carousel').offsetWidth ;
     
