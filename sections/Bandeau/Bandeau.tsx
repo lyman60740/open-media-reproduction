@@ -60,5 +60,5 @@ const Bandeau: React.FC = () => {
         </div>
     );
 };
-
+ 
 export default Bandeau;
