@@ -26,6 +26,7 @@ camera.position.z = 20;
 
   const [positionYTxt, setPositionYTxt] = useState(0.4); 
 
+ 
 
   useEffect(() => {
     // Créez un ScrollTrigger pour mettre à jour l'état de rotation et de position
@@ -50,8 +51,8 @@ camera.position.z = 20;
         setPositionYTxt(progress*10); 
       },
     });
+   
     
-  
     // Cleanup
     return () => trigger.kill();
   }, []);
@@ -66,21 +67,12 @@ camera.position.z = 20;
       sphereR.current.position.y = positionY;
       sphereR.current.position.x = positionX;
       sphereR.current.position.z = positionZ;
-
+      
       txtBlocRef.current.position.y = positionYTxt;
     }
   });
 
   const materialProps = useControls({
-    thickness: { value: 0.25, min: 0, max: 3, step: 0.05 },
-    roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-    transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-    ior: { value: 1.1, min: 1, max: 3, step: 0.1 },
-    chromaticAberration: { value: 0.27, min: 0, max: 1 },
-    backside: { value: true },
-    distortionScale: { value: 0.5, min: 0, max: 1, step: 0.1 },
-  });
-  const materialProps001 = useControls('001',{
     thickness: { value: 0.25, min: 0, max: 3, step: 0.05 },
     roughness: { value: 0, min: 0, max: 1, step: 0.1 },
     transmission: { value: 1, min: 0, max: 1, step: 0.1 },
@@ -118,7 +110,7 @@ camera.position.z = 20;
 
   return (
     <group scale={viewport.width / 3.5}>
-      <group position={[CenterX, CenterY, CenterZ]} ref={txtBlocRef}>
+      <group position={[CenterX, CenterY, CenterZ]} ref={txtBlocRef} position={[0, positionYTxt, -2.6]}>
       <Text  fontSize={textFontSize} fontWeight="bold" letterSpacing={letterSpace} fillOpacity={opacity}  font="/fonts/degular-regular.otf" >
     there's no place 
   </Text>

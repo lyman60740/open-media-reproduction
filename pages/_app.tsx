@@ -1,11 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/global.scss';
 import type { AppProps } from 'next/app';
 import Nav from '../components/Nav/nav';
+import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener('load', handleLoad);
+
     // Importation dynamique de GSAP et ses plugins côté client
     import("gsap/dist/gsap").then(gsapModule => {
       const gsap = gsapModule.gsap;
@@ -24,10 +33,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         });
       });
     });
+
+    return () => window.removeEventListener('load', handleLoad);
   }, []);
 
   return (
     <>
+     {isLoading && <LoadingScreen />}
+
       <Nav />
     
       <div id="smooth-wrapper">
